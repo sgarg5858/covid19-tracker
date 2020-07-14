@@ -1,0 +1,30 @@
+
+mat-sidenav-container,mat-sidenav-content,mat-side-nav{
+    height: 100%;
+}
+mat-sidenav{
+    width: 250px;
+}
+.showSidenav{
+    visibility: hidden;
+}
+.showLinks{
+    visibility: visible;
+}
+@media screen and (max-width:800px ) and (min-width:250px)
+{
+    .showSidenav{
+        visibility:visible;
+    }
+    .showLinks{
+        visibility: hidden;
+        display: none;
+    }
+}
+/* .addTopMargin{
+    margin-top: 9vh;
+} */
+mat-icon,mat-icon.matListIcon{
+    outline:none !important;
+
+}

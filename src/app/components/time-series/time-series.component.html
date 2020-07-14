@@ -1,0 +1,63 @@
+<div class="row" style="width: 100vw;margin-left: 0vw;padding: 0 0;margin-top: 2vh;">
+    <div style="width: 100vw;">
+       <mat-card>
+           <p style="font-size: 20px;">Cases Type Time Series:</p>
+            <mat-radio-group aria-label="Select an option" >
+                <mat-radio-button color="primary"  [checked]="true"  (change)="caseTypeChange($event)" style="margin-left: 2vw;"  value="confirmed" >Confirmed</mat-radio-button>
+                <mat-radio-button color="primary"    (change)="caseTypeChange($event)" style="margin-left: 2vw;"  value="active" >Active</mat-radio-button>
+                <mat-radio-button color="primary"    (change)="caseTypeChange($event)" style="margin-left: 2vw;"  value="recovered" >Recovered</mat-radio-button>
+                <mat-radio-button color="primary"    (change)="caseTypeChange($event)" style="margin-left: 2vw;"  value="deaths" >Deaths</mat-radio-button>
+              </mat-radio-group>
+       </mat-card>
+    </div>
+</div>
+<div class="row" style="margin-top: 2vh;width: 100vw;margin-left: 0vw;padding: 0 0;" *ngIf="timeSeriesLoading">
+    <div class=" col-12" style="padding: 0 0;" >
+        <mat-card style="width: 100%;padding: 0 0;" >
+            <mat-card-content style="margin-left: 20vw;margin-top: 5vh;">
+              Preparing Time Series Chart...
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row" style="margin-top: 2vh;width: 100vw;margin-left: 0vw;padding: 0 0;" *ngIf="chartInitialized && showConfirmed">
+    <div class=" col-12" style="padding: 0 0;" *ngIf="showConfirmed" >
+        <mat-card style="width: 100%;padding: 0 0;" >
+            <mat-card-content>
+              <google-chart  [data]="lineChartConfirmed"></google-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 2vh;width: 100vw;margin-left: 0vw;padding: 0 0;" *ngIf="chartInitialized && showActive">
+    <div class=" col-12" style="padding: 0 0;"  >
+        <mat-card style="width: 100%;padding: 0 0;" >
+            <mat-card-content>
+              <google-chart  [data]="lineChartActive"></google-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 2vh;width: 100vw;margin-left: 0vw;padding: 0 0;" *ngIf="chartInitialized && showRecovered">
+    <div class=" col-12" style="padding: 0 0;"  >
+        <mat-card style="width: 100%;padding: 0 0;" >
+            <mat-card-content>
+              <google-chart  [data]="lineChartRecovered"></google-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+</div>
+
+<div class="row" style="margin-top: 2vh;width: 100vw;margin-left: 0vw;padding: 0 0;" *ngIf="chartInitialized && showDeaths">
+    <div class=" col-12" style="padding: 0 0;"  >
+        <mat-card style="width: 100%;padding: 0 0;" >
+            <mat-card-content>
+              <google-chart  [data]="lineChartDeaths"></google-chart>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+</div>

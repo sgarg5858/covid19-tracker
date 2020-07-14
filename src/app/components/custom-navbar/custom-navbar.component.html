@@ -1,0 +1,57 @@
+<mat-sidenav-container>
+    <mat-sidenav  class="addTopMargin" #sidenav position="end" style="background-color: black;" role="navigation">
+        <mat-list role="list" style="display: flex; flex-direction: column;">
+            <mat-list-item role="listitem" style=" width:100%; display :flex;flex-direction: row;align-items: flex-end; ">
+                <button mat-icon-button (click)="onClose()" style=" outline:none;margin-left: 180px;">
+                    <mat-icon style="color:white;">close</mat-icon>
+                </button>
+            </mat-list-item>
+            <!-- <mat-list-item role="listitem" >
+                <a class="mat-title" (click)="onClose()" style="color: white;text-decoration: none;font-weight: 350;" routerLink="/" >Home</a>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <a class="mat-title" (click)="onClose()"  routerLink="/countries" style="color: white;text-decoration: none;font-weight: 350;">Countries</a>
+            </mat-list-item> -->
+            <!-- <mat-list-item role="listitem">
+                <a class="mat-title" (click)="onClose()" routerLink="/india" style="color: white;text-decoration: none;font-weight: 350;">India</a>
+            </mat-list-item> -->
+            
+          </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar  style="background-color: black;" >
+             <div>
+                <mat-list role="list" style="display: flex; flex-direction: row;">
+                    <mat-list-item role="listitem" >
+                        <a class="mat-headline" style="text-decoration:none" routerLink="">
+                           <p style="margin-bottom: 0;font-weight: 500;">
+                               <span style="color:white">
+                                Covid19 Analytics
+                               </span>
+                           </p>
+                        </a>
+                    </mat-list-item>
+                    <!-- <mat-list-item role="listitem" class="showLinks">
+                        <a class="mat-title" style="color: white;text-decoration: none;font-weight: 350;" routerLink="/" >Home</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem" class="showLinks">
+                        <a class="mat-title"  routerLink="/countries" style="color: white;text-decoration: none;font-weight: 350;">Countries</a>
+                    </mat-list-item> -->
+                    <!-- <mat-list-item role="listitem">
+                        <a class="mat-title"  routerLink="/india" style="color: white;text-decoration: none;font-weight: 350;">India</a>
+                    </mat-list-item> -->
+                  </mat-list>
+            </div> 
+            <span class="showSidenav" style="width: 100%;display: flex;align-items: flex-end;justify-content:flex-end;" >
+              <button style="color:white;outline: none;" mat-icon-button (click)="onToggle()" >
+                <mat-icon>
+                  menu
+                </mat-icon>
+              </button>
+            </span>
+          </mat-toolbar>
+          <main>
+            <router-outlet></router-outlet>
+          </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
