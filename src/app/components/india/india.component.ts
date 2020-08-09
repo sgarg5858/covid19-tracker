@@ -70,7 +70,7 @@ export class IndiaComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getIndiaData().subscribe((response)=>{
       console.log(response);
-      this.totalConfirmed=response.totalCases;
+      this.totalConfirmed=response.totalInfected;
       this.totalActive=response.activeCases;
       this.totalRecovered=response.recovered;
       this.totalDeaths=response.deaths;
@@ -82,10 +82,10 @@ export class IndiaComponent implements OnInit {
       {
         let temp:StateData={
           region:state.region,
-          confirmed:state.totalCases,
           active:state.totalInfected,
           recovered:state.recovered,
-          deaths:state.deceased
+          deaths:state.deceased,
+          confirmed:state.totalInfected+state.recovered+state.deceased,
 };
         states.push(temp);
       }
